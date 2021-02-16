@@ -1,0 +1,53 @@
+pass = "mfs"
+prompt = gg.prompt({"ENTER THE PASSWORD"}, {[1] = _}, {[1] = "text"})
+function right()
+  gg.alert("ᴡᴇʟᴄᴏᴍᴇ")
+end 
+ 
+function wrong()
+  gg.alert("ᴡʀᴏɴɢ ᴘᴀssᴡᴏʀᴅ!!")
+  os.exit()
+end 
+ 
+if prompt[1] == pass then
+  right()
+else
+  wrong()
+end
+HOMHOMHOME= 1
+function HOME()
+AB = gg.choice({'Radar','NoSpread'},nil,'Homemade')
+if AB == 1 then TR() end
+if AB == 2 then KO() end
+if AB == 36 then exit() end
+gg.setVisible(false)
+HOMEDM=-1
+end
+function TR()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("h01 00 50 e3 16 00 00 1a 00 00 55 e3 01 00 00 1a 00 00 a0 e3 4d df f1 eb 05 00 a0 e1 00 10 a0 e3 b8 43 03 eb 00 50 a0 e1 00 00 55 e3 01 00 00 1a 00 00 a0 e3 45 df f1 eb a8 50 95 e5 00 00 55 e3 01 00 00 1a 00 00 a0 e3 ", gg.TYPE_BYTE, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(1)
+gg.editAll("h030050E3", gg.TYPE_BYTE)
+gg.clearResults()
+gg.toast('Radar Activated')
+end
+function KO()
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("h70 4c 2d e9 10 b0 8d e2 04 8b 2d ed 00 40 a0 e1 68 50 94 e5 00 00 55 e3 01 00 00 1a 00 00 a0 e3 65 65 ed eb 60 60 94 e5 10 50 95 e5 00 00 56 e3 01 00 00 1a 00 00 a0 e3 5f 65 ed eb 8c 20 96 e5 04 00 a0 e1 05 10 a0 e1  ", gg.TYPE_BYTE, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.processResume()
+gg.getResults(72)
+gg.editAll("h0000a0e31eff2fe1", gg.TYPE_BYTE)
+gg.clearResults()
+gg.toast('NoSpread')
+end
+function exit()
+os.exit()
+end
+ while(true)
+do
+  if gg.isVisible(true) then
+    HOMEDM=1
+    gg.setVisible(false) 
+   end 
+  if HOMEDM==1 then HOME() end
+end
